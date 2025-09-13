@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maksim Merenkov — videos</title> 
+  <meta name="description" content="Portfolio de Maksim Merenkov — monteur vidéo." /> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header - Modern Dark Design */
+    .site-header {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(44, 44, 44, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 50px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(0, 217, 255, 0.05) 50%, rgba(94, 179, 205, 0.05) 100%);
+      z-index: 1;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: linear-gradient(135deg, #6C63FF, #00D9FF, #5eb3cd);
+      padding: 3px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .titles {
+      color: #FFFFFF;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #A0A0A0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .site-subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #A0A0A0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .contact-button {
+      background: linear-gradient(135deg, #6C63FF 0%, #00D9FF 100%);
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .contact-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-button:hover::before {
+      left: 100%;
+    }
+
+    /* Contact Modal - Modern Design */
+    .contacts {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(44, 44, 44, 0.95) 100%);
+      backdrop-filter: blur(30px);
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+      display: none;
+      text-align: center;
+      font-style: normal;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contacts.show {
+      display: block;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .contacts h3 {
+      margin-bottom: 30px;
+      color: #FFFFFF;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .contact-link {
+      display: block;
+      color: #6C63FF;
+      text-decoration: none;
+      padding: 15px 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:last-child {
+      border-bottom: none;
+    }
+
+    .contact-link:hover {
+      color: #00D9FF;
+      transform: translateX(5px);
+    }
+
+    .close-contacts {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #A0A0A0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-contacts:hover {
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+
+    .overlay-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      display: none;
+    }
+
+    .overlay-bg.show {
+      display: block;
+      animation: overlayFadeIn 0.3s ease-out;
+    }
+
+    @keyframes overlayFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Content area */
+    .content {
+      padding: 80px 0;
+      min-height: 50vh;
+    }
+
+    /* Navigation - Modern Gradient Tabs */
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 80px;
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #A0A0A0;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px 25px;
+      position: relative;
+      transition: all 0.4s ease;
+      border-radius: 25px;
+    }
+
+    .main-nav a.active {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #6C63FF, #00D9FF);
+      box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3);
+    }
+
+    .main-nav a:hover:not(.active) {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Introduction text */
+    .intro-text {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 100px auto;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #A0A0A0;
+      font-weight: 300;
+      position: relative;
+      padding: 0 30px;
+    }
+
+    .intro-text::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #6C63FF, #00D9FF, #5eb3cd);
+      border-radius: 2px;
+    }
+
+    /* Video Gallery - Keep the beloved card style */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 50px;
+    }
+
+    .video-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 20px;
+      overflow: visible;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      cursor: default;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .preview {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
+      border-radius: 20px 20px 0 0;
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+    }
+
+    .preview svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(44, 44, 44, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      text-align: left;
+      padding: 25px;
+      border-radius: 18px;
+      margin: 12px;
+      box-sizing: border-box;
+      padding-bottom: 60px;
+      pointer-events: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .overlay::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .overlay::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .overlay::-webkit-scrollbar-thumb {
+      background: rgba(108, 99, 255, 0.6);
+      border-radius: 2px;
+      transition: background 0.3s ease;
+    }
+
+    .overlay::-webkit-scrollbar-thumb:hover {
+      background: rgba(108, 99, 255, 0.8);
+    }
+
+    .overlay {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(108, 99, 255, 0.6) transparent;
+    }
+
+    .video-card:hover .overlay {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    .overlay-text {
+      margin-top: 15px;
+      margin-left: 0px;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      line-height: 1.6;
+      font-size: 13px;
+      text-align: left;
+      padding-left: 8px;
+      font-weight: 400;
+    }
+
+    .video-description {
+      padding: 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      color: #FFFFFF;
+      border-radius: 0 0 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      cursor: default;
+      position: relative;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .video-description-text {
+      flex: 1;
+    }
+
+    /* Play Button - Modern Gradient Design with proper triangle */
+    .play-button {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #6C63FF 0%, #00D9FF 50%, #5eb3cd 100%);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .play-button:hover {
+      background: linear-gradient(135deg, #00D9FF 0%, #5eb3cd 100%);
+      transform: translateX(-50%) scale(1.15);
+      box-shadow: 0 12px 35px rgba(0, 217, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .play-button::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 18px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .play-button:hover::after {
+      border-left-color: white;
+      transform: scale(1.1);
+    }
+
+    /* Page content for placeholder pages */
+    .page-placeholder {
+      text-align: center;
+      padding: 120px 20px;
+      color: #A0A0A0;
+    }
+
+    .page-placeholder h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #6C63FF 0%, #00D9FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+    }
+
+    .page-placeholder p {
+      font-size: 1.3rem;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(44, 44, 44, 0.8) 100%);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 100px;
+    }
+
+    .site-footer small {
+      font-size: 1rem;
+      color: #A0A0A0;
+      font-weight: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 35px;
+        text-align: center;
+      }
+
+      .brand {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .site-title {
+        font-size: 2.2rem;
+      }
+
+      .main-nav ul {
+        gap: 30px;
+        flex-wrap: wrap;
+        padding: 8px 15px;
+      }
+
+      .main-nav a {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      .intro-text {
+        font-size: 1.2rem;
+        margin-bottom: 70px;
+        padding: 0 20px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .content {
+        padding: 60px 0;
+      }
+
+      .contacts {
+        padding: 40px;
+        margin: 20px;
+        width: calc(100% - 40px);
+        left: 20px;
+        right: 20px;
+        transform: translateY(-50%);
+      }
+
+      .overlay-text {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .preview {
+        height: 220px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .preview img {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-title {
+        font-size: 2rem;
+      }
+
+      .site-subtitle {
+        font-size: 1rem;
+      }
+
+      .main-nav ul {
+        gap: 20px;
+      }
+
+      .main-nav a {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+      }
+
+      .preview {
+        height: 200px;
+      }
+
+      .overlay-text {
+        font-size: 11px;
+        margin-left: -2px;
+        padding-left: 4px;
+        line-height: 1.4;
+      }
+
+      .play-button {
+        width: 55px;
+        height: 55px;
+        top: -27px;
+      }
+
+      .play-button::after {
+        border-left: 16px solid white;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+    }
+
+    /* Additional mobile optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .preview {
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        -khtml-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+      }
+
+      .preview img {
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        pointer-events: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand">
+         <div class="avatar">
+           <img src="" alt="Maksim Merenkov"> 
+         </div>
+        <div class="titles">
+          <h1 class="site-title">Maksim Merenkov</h1> 
+          <p class="site-subtitle">Monteur Vidéo</p> 
+        </div>
+      </div>
+      <a href="#" class="contact-button" id="contact-btn">Me Contacter</a>
+    </div>
+  </header>
+
+  <!-- Contact Modal -->
+  <div class="overlay-bg" id="overlay"></div>
+  <address class="contacts" id="contacts-modal">
+    <button class="close-contacts" id="close-btn">&times;</button>
+    <h3>Contactez-moi</h3>
+    <a href="mailto:maksimmerenkov936@gmail.com" class="contact-link">maksimmerenkov936@gmail.com</a> 
+    
+  </address>
+
+  <main class="content container">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" data-page="videos" class="active">Montage</a></li>
+        <li><a href="#" data-page="photos">Photo</a></li>
+       </ul> 
+    </nav>
+
+    <section id="videos-section" class="video-gallery" aria-labelledby="videos-heading">
+      <h2 id="videos-heading" class="visually-hidden">Vidéos</h2>
+      
+      <div class="intro-text">
+      Тут твой текст про тебя 
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card" data-video-url="">
+          <div class="preview">
+            <img src="" alt="vidéo 1"> 
+
+            <div class="overlay">
+              <div class="overlay-text">
+                все, что ты делал в этом проекте 
+              </div>
+            </div>
+          </div>
+          
+          <div class="video-description">
+            <span class="video-description-text">video 1</span> 
+            <button class="play-button" aria-label="Lancer la vidéo"></button>
+          </div>
+        </div>
+
+    
+  </div>
+  <div class="video-description">
+    <span class="video-description-text">сlip documentaire «La Route de la Haine»</span>
+    <button class="play-button" aria-label="Lancer la vidéo"></button>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section id="photos-section" class="page-placeholder" style="display: none;">
+      <h1>Photo</h1>
+      <p>Galerie photo en cours de développement</p>
+    </section>
+
+    <section id="univers-section" class="page-placeholder" style="display: none;">
+      <h1>Mon Univers</h1>
+      <p>Découvrez mon univers créatif</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year">2025</span> Maksim Merenkov </small> 
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact modal functionality
+    const contactBtn = document.getElementById('contact-btn');
+    const contactsModal = document.getElementById('contacts-modal');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('close-btn');
+
+    function showModal() {
+      contactsModal.classList.add('show');
+      overlay.classList
