@@ -130,7 +130,32 @@
     .contact-section {
       justify-self: end;
       display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .skills-list li {
+      display: flex;
       align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .skills-list li::before {
+      content: '✓';
+      color: #64ffda;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
 
     @keyframes fadeInUp {
@@ -201,29 +226,12 @@
       font-size: 0.9rem;
       line-height: 1.6;
       color: #e1e1e6;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
       max-width: 400px;
       opacity: 0;
       animation: fadeIn 1s ease-out 1.4s forwards;
       position: relative;
       z-index: 1;
-    }
-
-    .hero-skills {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      justify-content: flex-start;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeIn 1s ease-out 1.6s forwards;
-    }
-
-    .skill-item {
-      color: #e1e1e6;
-      font-size: 0.9rem;
-      font-weight: 400;
-      text-align: left;
     }
 
     .email-button {
@@ -240,8 +248,15 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       opacity: 0;
-      animation: fadeIn 1s ease-out 1.9s forwards;
+      animation: fadeIn 1s ease-out 1.7s forwards;
       font-size: 0.85rem;
+    }
+
+    .email-button:hover {
+      background: #64ffda;
+      color: #1a1a2e;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
     }
 
     .contact-icon {
@@ -257,7 +272,6 @@
       height: 100%;
       pointer-events: none;
       overflow: hidden;
-      z-index: 0;
     }
 
     .floating-element {
@@ -267,28 +281,25 @@
       border: 2px solid rgba(100, 255, 218, 0.3);
       border-radius: 50%;
       animation: floatAround 20s ease-in-out infinite;
-      will-change: transform;
     }
 
     .floating-element:nth-child(1) {
-      top: 10%;
-      left: 5%;
+      top: 20%;
+      left: 10%;
       animation-delay: 0s;
     }
 
     .floating-element:nth-child(2) {
-      top: 50%;
-      right: 5%;
-      animation-delay: -7s;
+      top: 60%;
+      right: 10%;
+      animation-delay: -5s;
       border-radius: 20%;
-      width: 50px;
-      height: 50px;
     }
 
     .floating-element:nth-child(3) {
-      bottom: 15%;
-      left: 15%;
-      animation-delay: -14s;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: -10s;
       width: 40px;
       height: 40px;
     }
@@ -299,15 +310,15 @@
         opacity: 0.3; 
       }
       25% { 
-        transform: translate(30px, -20px) rotate(90deg); 
+        transform: translate(50px, -30px) rotate(90deg); 
         opacity: 0.5; 
       }
       50% { 
-        transform: translate(20px, 25px) rotate(180deg); 
+        transform: translate(30px, 40px) rotate(180deg); 
         opacity: 0.3; 
       }
       75% { 
-        transform: translate(-25px, 15px) rotate(270deg); 
+        transform: translate(-40px, 20px) rotate(270deg); 
         opacity: 0.4; 
       }
       100% { 
@@ -608,6 +619,11 @@
       .contact-section {
         justify-self: center;
         text-align: center;
+        align-items: center;
+      }
+
+      .skills-list {
+        align-items: center;
       }
 
       .avatar {
@@ -615,12 +631,8 @@
       }
 
       .site-header {
-        min-height: auto;
-        padding: 4rem 2rem;
-      }
-
-      .floating-element {
-        display: none;
+        min-height: 100vh;
+        padding: 3rem 2rem;
       }
     }
 
@@ -637,6 +649,11 @@
       .contact-section {
         justify-self: center;
         text-align: center;
+        align-items: center;
+      }
+
+      .skills-list {
+        align-items: center;
       }
 
       .avatar {
@@ -647,10 +664,6 @@
 
       .site-title {
         font-size: 1.5rem;
-      }
-
-      .hero-skills {
-        justify-content: flex-start;
       }
 
       .hero-description {
@@ -668,12 +681,8 @@
       }
 
       .site-header {
-        min-height: auto;
+        min-height: 100vh;
         padding: 3rem 1.5rem;
-      }
-
-      .floating-element {
-        display: none;
       }
 
       .main-nav ul {
@@ -763,27 +772,27 @@
         
         <div class="text-section">
           <h1 class="site-title">Merenkov Maksim</h1>
-          <h2 class="site-subtitle">monteur vidéo | photographe</h2>
+          <h2 class="site-subtitle">monteur vidéo</h2>
           
           <div class="hero-description">
-            Je m'engage dans chaque projet avec sérieux, en respectant vos délais et votre vision pour obtenir un résultat qui dépasse vos attentes.
+            Je m'engage dans chaque projet avec sérieux,<br>
+            en respectant vos délais et votre vision pour obtenir<br>
+            un résultat qui dépasse vos attentes.
           </div>
+        </div>
 
-          <div class="hero-skills">
-            <div class="skill-item">✓ Photoshop</div>
-            <div class="skill-item">✓ After Effects</div>
-            <div class="skill-item">✓ Premiere Pro</div>
-          </div>
-
+        <div class="contact-section">
+          <ul class="skills-list">
+            <li>Photoshop</li>
+            <li>After Effects</li>
+            <li>Premiere Pro</li>
+          </ul>
           <a href="mailto:maksimmerenkov936@gmail.com" class="email-button">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
             E-mail
           </a>
-        </div>
-
-        <div class="contact-section">
         </div>
       </div>
     </header>
