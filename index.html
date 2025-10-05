@@ -200,7 +200,7 @@
 
     .hero-description {
       font-size: 0.9rem;
-      line-height: 1.5;
+      line-height: 1.6;
       color: #e1e1e6;
       margin-bottom: 0;
       max-width: 400px;
@@ -256,7 +256,7 @@
       height: 60px;
       border: 2px solid rgba(100, 255, 218, 0.3);
       border-radius: 50%;
-      animation: floatAround 15s linear infinite;
+      animation: floatAround 20s ease-in-out infinite;
     }
 
     .floating-element:nth-child(1) {
@@ -281,8 +281,26 @@
     }
 
     @keyframes floatAround {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
-      50% { transform: translate(0, 0) rotate(180deg); opacity: 0.3; }
+      0% { 
+        transform: translate(0, 0) rotate(0deg); 
+        opacity: 0.3; 
+      }
+      25% { 
+        transform: translate(50px, -30px) rotate(90deg); 
+        opacity: 0.5; 
+      }
+      50% { 
+        transform: translate(30px, 40px) rotate(180deg); 
+        opacity: 0.3; 
+      }
+      75% { 
+        transform: translate(-40px, 20px) rotate(270deg); 
+        opacity: 0.4; 
+      }
+      100% { 
+        transform: translate(0, 0) rotate(360deg); 
+        opacity: 0.3; 
+      }
     }
 
     /* Content area */
@@ -585,7 +603,7 @@
 
       .site-header {
         height: auto;
-        min-height: 30vh;
+        min-height: 50vh;
         padding: 3rem 2rem;
       }
     }
@@ -606,8 +624,8 @@
 
       .avatar {
         justify-self: center;
-        width: 70px;
-        height: 70px;
+        width: 140px;
+        height: 140px;
       }
 
       .site-title {
@@ -626,7 +644,7 @@
 
       .site-header {
         height: auto;
-        min-height: 35vh;
+        min-height: 55vh;
         padding: 2rem 1rem;
       }
 
@@ -720,7 +738,9 @@
           <h2 class="site-subtitle">monteur vidéo</h2>
           
           <div class="hero-description">
-            Je m'engage dans chaque projet avec sérieux, en respectant vos délais et votre vision pour obtenir un résultat qui dépasse vos attentes.
+            Je m'engage dans chaque projet avec sérieux,<br>
+            en respectant vos délais et votre vision pour obtenir<br>
+            un résultat qui dépasse vos attentes.
           </div>
         </div>
 
