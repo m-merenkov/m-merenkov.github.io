@@ -211,30 +211,19 @@
 
     .hero-skills {
       display: flex;
-      gap: 15px;
+      flex-direction: column;
+      gap: 8px;
       justify-content: flex-start;
-      flex-wrap: wrap;
       margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeIn 1s ease-out 1.6s forwards;
     }
 
-    .skill-badge {
-      background: rgba(187, 134, 252, 0.15);
-      border: 1px solid rgba(187, 134, 252, 0.4);
-      color: #bb86fc;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .skill-badge:hover {
-      background: rgba(187, 134, 252, 0.25);
-      border-color: #bb86fc;
-      transform: translateY(-2px);
+    .skill-item {
+      color: #e1e1e6;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: left;
     }
 
     .email-button {
@@ -253,13 +242,6 @@
       opacity: 0;
       animation: fadeIn 1s ease-out 1.9s forwards;
       font-size: 0.85rem;
-    }
-
-    .email-button:hover {
-      background: #64ffda;
-      color: #1a1a2e;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
     }
 
     .contact-icon {
@@ -668,7 +650,7 @@
       }
 
       .hero-skills {
-        justify-content: center;
+        justify-content: flex-start;
       }
 
       .hero-description {
@@ -788,19 +770,20 @@
           </div>
 
           <div class="hero-skills">
-            <span class="skill-badge">Photoshop</span>
-            <span class="skill-badge">After Effects</span>
-            <span class="skill-badge">Premiere Pro</span>
+            <div class="skill-item">✓ Photoshop</div>
+            <div class="skill-item">✓ After Effects</div>
+            <div class="skill-item">✓ Premiere Pro</div>
           </div>
-        </div>
 
-        <div class="contact-section">
           <a href="mailto:maksimmerenkov936@gmail.com" class="email-button">
             <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
             E-mail
           </a>
+        </div>
+
+        <div class="contact-section">
         </div>
       </div>
     </header>
