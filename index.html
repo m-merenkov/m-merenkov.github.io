@@ -201,12 +201,40 @@
       font-size: 0.9rem;
       line-height: 1.6;
       color: #e1e1e6;
-      margin-bottom: 0;
+      margin-bottom: 1.5rem;
       max-width: 400px;
       opacity: 0;
       animation: fadeIn 1s ease-out 1.4s forwards;
       position: relative;
       z-index: 1;
+    }
+
+    .hero-skills {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 1.6s forwards;
+    }
+
+    .skill-badge {
+      background: rgba(187, 134, 252, 0.15);
+      border: 1px solid rgba(187, 134, 252, 0.4);
+      color: #bb86fc;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .skill-badge:hover {
+      background: rgba(187, 134, 252, 0.25);
+      border-color: #bb86fc;
+      transform: translateY(-2px);
     }
 
     .email-button {
@@ -223,7 +251,7 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       opacity: 0;
-      animation: fadeIn 1s ease-out 1.7s forwards;
+      animation: fadeIn 1s ease-out 1.9s forwards;
       font-size: 0.85rem;
     }
 
@@ -639,6 +667,10 @@
         font-size: 1.5rem;
       }
 
+      .hero-skills {
+        justify-content: center;
+      }
+
       .hero-description {
         font-size: 0.85rem;
         max-width: 100%;
@@ -755,6 +787,12 @@
             Je m'engage dans chaque projet avec sérieux,<br>
             en respectant vos délais et votre vision pour obtenir<br>
             un résultat qui dépasse vos attentes.
+          </div>
+
+          <div class="hero-skills">
+            <span class="skill-badge">Photoshop</span>
+            <span class="skill-badge">After Effects</span>
+            <span class="skill-badge">Premiere Pro</span>
           </div>
         </div>
 
