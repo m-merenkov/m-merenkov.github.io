@@ -504,6 +504,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      position: relative;
+      z-index: 1;
     }
 
     .preview-placeholder {
@@ -573,10 +575,12 @@
       cursor: pointer;
       position: relative;
       background: rgba(100, 255, 218, 0.02);
+      min-height: 80px;
     }
 
     .video-description-text {
       flex: 1;
+      padding-top: 30px;
     }
 
     /* Play Button */
