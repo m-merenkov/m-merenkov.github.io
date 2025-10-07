@@ -403,7 +403,7 @@
 
     /* Content area */
     .content {
-      padding: 60px 0 0 0;
+      padding: 60px 0;
       min-height: 60vh;
       background: rgba(15, 52, 96, 0.1);
       position: relative;
@@ -462,7 +462,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 50px;
-      margin-bottom: 80px;
     }
 
     .video-card {
@@ -505,8 +504,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      position: relative;
-      z-index: 1;
     }
 
     .preview-placeholder {
@@ -576,12 +573,10 @@
       cursor: pointer;
       position: relative;
       background: rgba(100, 255, 218, 0.02);
-      min-height: 80px;
     }
 
     .video-description-text {
       flex: 1;
-      padding-top: 30px;
     }
 
     /* Play Button */
@@ -818,7 +813,7 @@
       }
 
       .content {
-        padding: 40px 0 0 0;
+        padding: 40px 0;
       }
 
       .video-grid {
@@ -933,12 +928,12 @@
 
         <div class="video-grid">
           
-          <!-- Video 2 -->
-          <div class="video-card" data-video-url="https://www.youtube.com/embed/bjmauZZdHIM">
+  <!-- НАЧАЛО КАРТОЧКИ ВИДЕО -->
+          <div class="video-card" data-video-url=""> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ВИДЕО -->
             <div class="preview">
-              <img src="images/preview2.jpg" alt="Aperçu vidéo 2">
+            <img src="images/preview2.jpg"> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ПРЕВЬЮ -->
               <div class="overlay">
-                <div class="overlay-text">
+                <div class="overlay-text"> <!-- ПЕРЕЧИСЛЕНИЕ ВИДОВ РАБОТЫ -->
                   • Vidéos promotionnelles<br>
                   • Courts métrages<br>
                   • Montages événementiels<br>
@@ -946,18 +941,40 @@
                 </div>
               </div>
             </div>
-            <div class="video-description">
-              <span class="video-description-text">Vidéo 2</span>
+              <div class="video-description">
+              <span class="video-description-text">video 2</span> <!-- НАЗВАНИЕ ТИПА ВИДЕО -->
               <button class="play-button" aria-label="Lancer la vidéo"></button>
             </div>      
           </div>
+<!-- КОНЕЦ КАРТОЧКИ ВИДЕО -->
+          
+  <!-- НАЧАЛО КАРТОЧКИ ВИДЕО -->
+          <div class="video-card" data-video-url=""> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ВИДЕО -->
+            <div class="preview">
+            <img src="images/preview2.jpg"> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ПРЕВЬЮ -->
+              <div class="overlay">
+                <div class="overlay-text"> <!-- ПЕРЕЧИСЛЕНИЕ ВИДОВ РАБОТЫ -->
+                  • Vidéos promotionnelles<br>
+                  • Courts métrages<br>
+                  • Montages événementiels<br>
+                  • Contenus pour réseaux sociaux
+                </div>
+              </div>
+            </div>
+              <div class="video-description">
+              <span class="video-description-text">video 2</span> <!-- НАЗВАНИЕ ТИПА ВИДЕО -->
+              <button class="play-button" aria-label="Lancer la vidéo"></button>
+            </div>      
+          </div>
+<!-- КОНЕЦ КАРТОЧКИ ВИДЕО -->
 
-          <!-- Video 3 -->
-          <div class="video-card" data-video-url="https://www.youtube.com/embed/YO3goBHZ1vc">
+          
+  <!-- НАЧАЛО КАРТОЧКИ ВИДЕО -->
+          <div class="video-card" data-video-url=""> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ВИДЕО -->
             <div class="preview">
-              <img src="images/preview2.jpg" alt="Aperçu vidéo 3">
+            <img src="images/preview2.jpg"> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ПРЕВЬЮ -->
               <div class="overlay">
-                <div class="overlay-text">
+                <div class="overlay-text"> <!-- ПЕРЕЧИСЛЕНИЕ ВИДОВ РАБОТЫ -->
                   • Vidéos promotionnelles<br>
                   • Courts métrages<br>
                   • Montages événementiels<br>
@@ -965,11 +982,33 @@
                 </div>
               </div>
             </div>
-            <div class="video-description">
-              <span class="video-description-text">Vidéo 3</span>
+              <div class="video-description">
+              <span class="video-description-text">video 2</span> <!-- НАЗВАНИЕ ТИПА ВИДЕО -->
               <button class="play-button" aria-label="Lancer la vidéo"></button>
             </div>      
           </div>
+<!-- КОНЕЦ КАРТОЧКИ ВИДЕО -->
+
+          
+  <!-- НАЧАЛО КАРТОЧКИ ВИДЕО -->
+          <div class="video-card" data-video-url=""> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ВИДЕО -->
+            <div class="preview">
+            <img src="images/preview2.jpg"> <!-- ВСТАВЛЯЕМ ССЫЛКУ НА ПРЕВЬЮ -->
+              <div class="overlay">
+                <div class="overlay-text"> <!-- ПЕРЕЧИСЛЕНИЕ ВИДОВ РАБОТЫ -->
+                  • Vidéos promotionnelles<br>
+                  • Courts métrages<br>
+                  • Montages événementiels<br>
+                  • Contenus pour réseaux sociaux
+                </div>
+              </div>
+            </div>
+              <div class="video-description">
+              <span class="video-description-text">video 2</span> <!-- НАЗВАНИЕ ТИПА ВИДЕО -->
+              <button class="play-button" aria-label="Lancer la vidéo"></button>
+            </div>      
+          </div>
+<!-- КОНЕЦ КАРТОЧКИ ВИДЕО -->
         
         </div>
       </section>
@@ -1061,23 +1100,4 @@
     });
   </script>
 </body>
-</html>1 -->
-          <div class="video-card" data-video-url="https://www.youtube.com/embed/3rBDb_Av4dM">
-            <div class="preview">
-              <img src="images/preview2.jpg" alt="Aperçu vidéo 1">
-              <div class="overlay">
-                <div class="overlay-text">
-                  • Vidéos promotionnelles<br>
-                  • Courts métrages<br>
-                  • Montages événementiels<br>
-                  • Contenus pour réseaux sociaux
-                </div>
-              </div>
-            </div>
-            <div class="video-description">
-              <span class="video-description-text">Vidéo 1</span>
-              <button class="play-button" aria-label="Lancer la vidéo"></button>
-            </div>      
-          </div>
-
-          <!-- Video
+</html>
