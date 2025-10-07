@@ -562,7 +562,7 @@
     }
 
     .category-item.expanded .category-content {
-      max-height: 5000px;
+      max-height: 15000px;
     }
 
     .photos-grid {
@@ -647,9 +647,10 @@
 
     .lightbox-content {
       position: relative;
-      max-width: 90%;
+      max-width: 80%;
       max-height: 90%;
       animation: zoomIn 0.3s ease;
+      z-index: 1;
     }
 
     @keyframes zoomIn {
@@ -728,6 +729,7 @@
       justify-content: center;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
+      z-index: 10001;
     }
 
     .lightbox-nav:hover {
@@ -1041,7 +1043,7 @@
 
         <div class="categories-list">
 
-          <!-- НАЧАЛО БЛОКА КАТЕГОРИИ ФОТО (ПАПКИ) -->
+           <!-- НАЧАЛО БЛОКА КАТЕГОРИИ ФОТО (ПАПКИ) -->
           <div class="category-item">
             <button class="category-header" onclick="toggleCategory(this)">
               <div class="category-info">
@@ -1054,10 +1056,6 @@
 
                 <div class="photo-item" onclick="openLightbox(this)">
                   <img src="DSC_1500.JPG" alt="Nature 1" />
-                </div>
-                
-                <div class="photo-item" onclick="openLightbox(this)">
-                  <img src="DSC_4967.JPG" alt="Nature 1" />
                 </div>
                
                 <div class="photo-item" onclick="openLightbox(this)">
@@ -1139,7 +1137,7 @@
           <div class="category-item">
             <button class="category-header" onclick="toggleCategory(this)">
               <div class="category-info">
-                <h3 class="category-title">Nourriture (Tout a été mangé)</h3>
+                <h3 class="category-title">Nourriture (tout a été mangé)</h3>
               </div>
               <div class="expand-arrow"></div>
             </button>
@@ -1165,7 +1163,11 @@
                 <div class="photo-item" onclick="openLightbox(this)">
                   <img src="тень.png" alt="Divers 1" />
                 </div>
-               
+                
+                <div class="photo-item" onclick="openLightbox(this)">
+                  <img src="DSC_4967.JPG" alt="Nature 1" />
+                </div>
+                
                 <div class="photo-item" onclick="openLightbox(this)">
                   <img src="_CSC1284 (1).JPG" alt="Divers 2" />
                 </div>
@@ -1258,10 +1260,10 @@
       const lightboxImg = document.getElementById('lightbox-img');
       const imgSrc = photoElement.querySelector('img').src;
       const imgAlt = photoElement.querySelector('img').alt;
-      
+     
       allPhotos = Array.from(document.querySelectorAll('.photo-item img'));
       currentPhotoIndex = allPhotos.findIndex(img => img.src === imgSrc);
-      
+     
       lightboxImg.src = imgSrc;
       lightboxImg.alt = imgAlt;
       lightbox.classList.add('active');
@@ -1279,13 +1281,13 @@
     function navigateLightbox(direction, event) {
       event.stopPropagation();
       currentPhotoIndex += direction;
-      
+     
       if (currentPhotoIndex < 0) {
         currentPhotoIndex = allPhotos.length - 1;
       } else if (currentPhotoIndex >= allPhotos.length) {
         currentPhotoIndex = 0;
       }
-      
+     
       const lightboxImg = document.getElementById('lightbox-img');
       lightboxImg.src = allPhotos[currentPhotoIndex].src;
       lightboxImg.alt = allPhotos[currentPhotoIndex].alt;
