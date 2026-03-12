@@ -6,7 +6,8 @@
   <title>Maksim Merenkov — Vidéos</title> 
   <meta name="description" content="Portfolio de Maksim Merenkov — monteur vidéo." /> 
 
-  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Favicon caméra intégré en SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a1a'/><g transform='translate(4,7)'><rect x='1' y='5' width='22' height='15' rx='2' fill='none' stroke='white' stroke-width='1.8'/><circle cx='12' cy='12.5' r='4.5' fill='none' stroke='white' stroke-width='1.8'/><path d='M8 5 L10 2 L14 2 L16 5' fill='none' stroke='white' stroke-width='1.8'/><circle cx='19' cy='8' r='1' fill='white'/></g></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +51,6 @@
     
     .video-description { padding: 25px; display: flex; align-items: center; justify-content: space-between; }
     
-    /* Play Button Triangle - ИСПРАВЛЕНО */
     .play-button { 
       width: 50px; height: 50px; 
       background: linear-gradient(135deg, #6C63FF, #00D9FF); 
@@ -75,7 +75,6 @@
     
     .site-footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 80px; color: #A0A0A0; }
     
-    /* Скрытые секции */
     .hidden { display: none; }
   </style>
 </head>
@@ -155,7 +154,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Модальное окно
     const contactBtn = document.getElementById('contact-btn');
     const modal = document.getElementById('contacts-modal');
     const overlay = document.getElementById('overlay');
@@ -165,7 +163,6 @@
     closeBtn.onclick = () => { modal.classList.remove('show'); overlay.classList.remove('show'); };
     overlay.onclick = closeBtn.onclick;
 
-    // Переключение вкладок (Montage / Photo)
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = {
       'videos-section': document.getElementById('videos-section'),
@@ -175,11 +172,8 @@
     navLinks.forEach(link => {
       link.onclick = (e) => {
         e.preventDefault();
-        // Убираем активный класс у всех ссылок
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
-
-        // Скрываем все секции и показываем нужную
         const target = link.getAttribute('data-target');
         Object.values(sections).forEach(s => s.classList.add('hidden'));
         sections[target].classList.remove('hidden');
